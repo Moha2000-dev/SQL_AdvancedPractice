@@ -121,7 +121,7 @@ END CATCH;
 
 ---
 
-## 🧬 ACID Properties
+##  ACID Properties
 
 | Property    | Meaning                                         | Real-life Example                         |
 | ----------- | ----------------------------------------------- | ----------------------------------------- |
