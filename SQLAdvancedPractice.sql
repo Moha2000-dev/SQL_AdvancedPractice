@@ -46,10 +46,14 @@ SELECT FullName, Email FROM Applicants;
 -- 'Layla Al Riyami' appears twice because she is both a trainee and an applicant.
 -- UNION removes duplicates, UNION ALL includes them.
 
--- 3. Find people in both tables using INNER JOIN
-SELECT T.FullName, T.Email 
-FROM Trainees T
-INNER JOIN Applicants A ON T.Email = A.Email;
+-- 3. Find people in both tables using subquri
+SELECT FullName, Email
+FROM Trainees
+WHERE Email IN (
+    SELECT Email
+    FROM Applicants
+);
+
 
 
 -- Part 2: DROP, DELETE, TRUNCATE Observation
@@ -92,7 +96,7 @@ WHERE Email IN (SELECT Email FROM Trainees);
 
 -- 4. What is a transaction?
 -- A transaction is a group of SQL operations that are executed as a single unit.
--- B All commands succeed or all fail — no partial updates.
+-- B All commands succeed or all fail â€” no partial updates.
 -- 5. Transaction Script
 BEGIN TRANSACTION;
 
